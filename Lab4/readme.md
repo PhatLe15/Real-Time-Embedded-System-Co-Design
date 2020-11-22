@@ -84,12 +84,16 @@ void regionConverter(char* a){
    printf("Since the address of this string is: %08X\n", a);
    printf("Sector: %d       Bank: %d\n\n", sector, bank);
 }
-Figure 3: Function to find bank and sector in memory
+```
+*Figure 3.1: Function to find bank and sector in memory*
 
+```c
     FlashCtl_unprotectSector(FLASH_MAIN_MEMORY_SPACE_BANK0, FLASH_SECTOR0); //for string 1
     FlashCtl_unprotectSector(FLASH_MAIN_MEMORY_SPACE_BANK1, FLASH_SECTOR5); //for string 3
-Figure 3:Function to unprotect sector memory
+```
+*Figure 3.2: Function to unprotect sector memory*
 
+```c
     ROM_FlashCtl_programMemory(string2, string1, 2);
     ROM_FlashCtl_programMemory(string2, string3, 2);
 ```

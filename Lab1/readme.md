@@ -107,7 +107,7 @@ int main(void)
 ```
 
 ```
-[CORTEX_M4_0]      Description                   Address                 Value
+[CORTEX_M4_0]      Description                    Address                 Value
                    TLV checksum                   00201000h               2CE512F2h
                    Device Info Tag                00201004h               0000000Bh
                    Device Info Length             00201008h               00000004h

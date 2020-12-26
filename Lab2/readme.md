@@ -18,7 +18,7 @@ For this task, I need to look for the pin number of the blue LED in the schemati
 *Figure 1: DriverLib’s function to set up LEDs as output and turn off LEDs*
 
 ## Exercise 1.2
-According to the datasheet, the base port address is 0x40004c00 and the offset is 0x003. Therefore, the port address for the output register is 0x40004c03. Since the blue LED is port 2.2, bit 2 is used to control the blue LED. To toggle the blue LED, I use XOR(^) operation between the output register and bit 2 such as:
+According to the datasheet, the `base port address` is `0x40004c00` and the `offset` is `0x003`. Therefore, the port address for the output register is `0x40004c03`. Since the blue LED is port `2.2`, `bit 2` is used to control the blue LED. To toggle the blue LED, I use `XOR(^)` operation between the output register and bit 2 such as:
 	`*PORT2_prt ^= 0x4;`
   
 ## Exercise 1.3

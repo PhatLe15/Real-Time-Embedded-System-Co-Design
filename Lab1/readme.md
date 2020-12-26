@@ -8,7 +8,7 @@
 *Figure 1: TI folder showing the CCS v10*  
 
 ## Exercise 2
-The task for this excercise is to download the driver package and able to compile a sameple `hello world` program. When attempting to download MSP432P4 SDK to the computer, the package did not appear on the folder even after waiting for an hour. The solution for this is to have several attempts to restart the application and press the install button again. If it is successful, the TI folder does not contain the SDK; however, it still appears inside CSS as shown in *Figure 2* below.
+The task for this excercise is to download the driver package and able to compile a sample `hello world` program. When attempting to download MSP432P4 SDK to the computer, the package did not appear on the folder even after waiting for an hour. The solution for this is to have several attempts to restart the application and press the install button again. If it is successful, the TI folder does not contain the SDK; however, it still appears inside CSS as shown in *Figure 2* below.
 
 ```c
 #include <ti/devices/msp432p4xx/driverlib/driverlib.h>

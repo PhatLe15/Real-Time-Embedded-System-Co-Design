@@ -7,7 +7,6 @@ For this exercise, the job is to create two separate tasks to control the red LE
 ```c
 Void task1(UArg arg0, UArg arg1)
 {
-
     while(1){
         printf("Task1\n");
         Task_sleep(1250);
@@ -17,7 +16,6 @@ Void task1(UArg arg0, UArg arg1)
 
 Void task2(UArg arg0, UArg arg1)
 {
-
     MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);     //RED   P1.0 as output
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);     //RED set to low
 
@@ -29,7 +27,7 @@ Void task2(UArg arg0, UArg arg1)
 }
 
 ```
-According to the code snippet above, task 1 function will increment the semaphore count value after it finishes the delay at 0.4Hz(2500ms) by calling Semaphore_post(). In this case, the delay time will be 1250ms per ON and OFF (period/2). At the same time, Task 2 function will wait and receive the increment signal using the Semaphore_pend(). Then, it will decrement the signal and continue executing the next instructions. 
+According to the code snippet above, **task 1** function will increment the semaphore count value after it finishes the delay at `0.4Hz(2500ms)` by calling **Semaphore_post()**. In this case, the delay time will be `1250ms` per `ON` and `OFF` (`period/2`). At the same time, **Task 2** function will wait and receive the increment signal using the **Semaphore_pend()**. Then, it will decrement the signal and continue executing the next instructions. 
 
 ## Exercise 2
 For this exercise, the task is to create 3 tasks that use the same function implementation from the given parameters below. Furthermore, each task will have to pass different arguments to differentiate the output.
@@ -72,7 +70,7 @@ Task: arg0=1, arg1=0
 ```
 *Figure 1: Output read from console*
 
-As shown in Figure 1 above, each task has been successfully created and periodically output its own arguments as indicated in the code snippet below.
+As shown in *Figure 1* above, each task has been successfully created and periodically output its own arguments as indicated in the code snippet below.
 
 ```c
   // Task 1
@@ -95,7 +93,7 @@ As shown in Figure 1 above, each task has been successfully created and periodic
 ```
 
 ## Exercise 3
-Similar to exercise 1, this exercise will control 3 LEDs red(P1.0), green(2.1) and blue(2.2). Furthermore, all the LED will have to blink synchronously at a random rate ranging from 0.2Hz to 1Hz(1000ms to 5000ms). Therefore, the delay per ON and OFF period should range from 500ms to 2500ms. As shown in the code snippet below, the common LED control task function is Taski and the timing task function is called task1. To make sure each task is running in synchronized, I used semaphore to increment 3 times using Semaphore_post() in task 1. Then, taski will decrement one time and wait for others taski to decrement until the semaphore count value has reached 0. We can obtain the count value using Semaphore_getCount() and can pause the current task using Task_yield() as shown below. 
+Similar to exercise 1, this exercise will control 3 LEDs red(`P1.0`), green(`P2.1`) and blue(`P2.2`). Furthermore, all the LED will have to blink synchronously at a random rate ranging from `0.2Hz` to `1Hz`(`1000ms` to `5000ms`). Therefore, the delay per `ON` and `OFF` period should range from `500ms` to `2500ms`. As shown in the code snippet below, the common LED control task function is **Taski** and the timing task function is called task1. To make sure each task is running in synchronized, I used semaphore to increment 3 times using Semaphore_post() in **task 1**. Then, taski will decrement one time and wait for others taski to decrement until the semaphore count value has reached 0. We can obtain the count value using **Semaphore_getCount()** and can pause the current task using **Task_yield()** as shown below. 
 
 ```c
 Void task1(UArg arg0, UArg arg1)

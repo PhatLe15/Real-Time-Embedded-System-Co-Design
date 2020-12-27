@@ -2,7 +2,7 @@
 The purpose of this lab assignment is to have a better understanding of the semaphore system object in the TI-RTOS by creating tasks to control LED.
 
 ## Exercise 1
-For this exercise, the job is to create two separate tasks to control the red LED using semaphore. Specifically, Task 1 will control the delay time at 0.4 Hz and Task 2 will initialize and toggle the LED.
+For this exercise, the job is to create two separate tasks to control the red LED using semaphore. Specifically, **Task 1** will control the delay time at `0.4Hz` and **Task 2** will initialize and toggle the LED.
 
 ```c
 Void task1(UArg arg0, UArg arg1)
@@ -93,7 +93,7 @@ As shown in *Figure 1* above, each task has been successfully created and period
 ```
 
 ## Exercise 3
-Similar to exercise 1, this exercise will control 3 LEDs red(`P1.0`), green(`P2.1`) and blue(`P2.2`). Furthermore, all the LED will have to blink synchronously at a random rate ranging from `0.2Hz` to `1Hz`(`1000ms` to `5000ms`). Therefore, the delay per `ON` and `OFF` period should range from `500ms` to `2500ms`. As shown in the code snippet below, the common LED control task function is **Taski** and the timing task function is called task1. To make sure each task is running in synchronized, I used semaphore to increment 3 times using Semaphore_post() in **task 1**. Then, taski will decrement one time and wait for others taski to decrement until the semaphore count value has reached 0. We can obtain the count value using **Semaphore_getCount()** and can pause the current task using **Task_yield()** as shown below. 
+Similar to exercise 1, this exercise will control 3 LEDs red(`P1.0`), green(`P2.1`) and blue(`P2.2`). Furthermore, all the LED will have to blink synchronously at a random rate ranging from `0.2Hz` to `1Hz`(`1000ms` to `5000ms`). Therefore, the delay per `ON` and `OFF` period should range from `500ms` to `2500ms`. As shown in the code snippet below, the common LED control task function is **Taski** and the timing task function is called task1. To make sure each task is running in synchronized, I used semaphore to increment 3 times using **Semaphore_post()** in **task 1**. Then, taski will decrement one time and wait for others taski to decrement until the semaphore count value has reached 0. We can obtain the count value using **Semaphore_getCount()** and can pause the current task using **Task_yield()** as shown below. 
 
 ```c
 Void task1(UArg arg0, UArg arg1)

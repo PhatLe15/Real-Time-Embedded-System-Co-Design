@@ -33,6 +33,8 @@ To find the delay blinking time, we invert the frequency into time(`T = 1/f`). A
 
 ## Exercise 2.1
 For this exercise, the task is to read and display the state of button S1(`P1.1`) on `Task1` function. According to the terminal window below, the pressed message is `‘S10’` and the not pressed message is `‘S11’`.
+
+
 ![sadf](https://lh6.googleusercontent.com/mbkJZspsfw-n3B8KpWpSE28S55mIMqpUiF5RajoOhIs9gccsqg3yDPxBut1dt5lITD9z3Dj7ddQL07aAx4LAhhoueQ3Kcu593LsdfOYYkbPLWFHQ5mXJaO3ZuH0VX0g0TeizXEyJ)
 *Figure 1: Output read from terminal window*
 
@@ -67,6 +69,8 @@ Void task1(UArg arg0, UArg arg1)
 
 ## Exercise 2.2
   For this task, we will try to save the communication bandwidth by only sending the message to the terminal only when a different message is updated. In addition, if nothing is updated within `5s`, we will print a message with no state change.
+  
+  
   ![sad](https://lh6.googleusercontent.com/H0DzwHMQkTdl9RgfqSlrPTsBeiPWoo8CrgnHaSR9bVQaHUSQ7b2E5qcHFkc6m7N7iFYhqO7ZKVxEX2oVnthXejZf7eg5IYmfDjBc6rI0ok02N9WpTTOdEpXXkZ3KwxFS2KhGgrnR)
   *Figure 2: Output read from terminal window*
   
@@ -100,6 +104,8 @@ Void task1(UArg arg0, UArg arg1)
 
 ## Exercise 2.3
  Similar to the above exercise, we will control button S2(`P1.4`) on `Task2` function which sends pressed messages as `‘S20’`, not pressed messages as `‘S21’`, and no state change message after 5 second. However, the `UART` initialization functions can only call once which have already been created in the Task1 function. To handle the issue, we bring all necessary `UART` initialization functions to main as well as bringing variables such as `UART_handle` and `UART_param` to global so both tasks can share the communication line.  
+ 
+ 
 ![asdsa](https://lh6.googleusercontent.com/VMbE76kFzxyPe3OLApa2BviVLNIiTxl4oE9P9hY0KgQCWMKJ16SC7m5nqHieAxkvaf6qWpdfhhdy9loeLj9vjbRaaVjYSyZM3dkiPGNGDfaOpGNcUTlsmbHOVwvEbXz5_XXPLsbr)
 *Figure 6: Output read from Terminal Window*
 
@@ -161,6 +167,8 @@ Void task2(UArg arg0, UArg arg1)
 
 ## Exercise 2.3
 For this last task, we will create another `Task3` function to control the blue LED(`P2.2`) using the input keyboard to send control messages from **Terminal Window** to the **LaunchPad**. Specifically, we can send a `‘1’` message to the terminal to turn on the LED and `‘0’` to turn it off. To receive the signal from the terminal, **UART_read()** function is used with a single character variable as the buffer to pass the message as shown below.
+
+
 ```c
 Void task3(UArg arg0, UArg arg1)
 {

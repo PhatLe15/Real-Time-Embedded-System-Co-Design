@@ -165,7 +165,7 @@ Void task2(UArg arg0, UArg arg1)
 }
 ```
 
-## Exercise 2.3
+## Exercise 2.4
 For this last task, we will create another `Task3` function to control the blue LED(`P2.2`) using the input keyboard to send control messages from **Terminal Window** to the **LaunchPad**. Specifically, we can send a `‘1’` message to the terminal to turn on the LED and `‘0’` to turn it off. To receive the signal from the terminal, **UART_read()** function is used with a single character variable as the buffer to pass the message as shown below.
 
 

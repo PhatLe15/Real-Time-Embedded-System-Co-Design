@@ -17,4 +17,4 @@ Things I learned from this course:
 
 * UART Communication: I created tasks and used the TI driver to perform UART communication with external terminal programs, which gave me a better understanding of the TI-RTOS.
 
-These projects have given me hands-on experience in software development, problem-solving, and critical thinking skills. I am confident that my skills and knowledge make me a strong candidate for the Software Engineering role at [Company]. I am eager to apply my experience and further develop my skills in this field.
+These projects have given me hands-on experience in software development, problem-solving, and critical thinking skills. I am confident that my skills and knowledge make me a strong candidate for the Software Engineering role.
